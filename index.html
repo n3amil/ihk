@@ -27,6 +27,11 @@
 	<div class="reveal">
 		<div class="slides">
 			<section>
+				<img height="200px" src="http://blog.arungupta.me/wp-content/uploads/2015/04/docker-swarm.png" alt="">
+				<h3>+</h3>
+				<img height="200px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Jenkins_logo_with_title.svg/1280px-Jenkins_logo_with_title.svg.png" alt="">
+			</section>
+			<section>
 				<h2>Feature Branch Deployments CI/CD</h2>
 			</section>
 			<section class="section">
@@ -37,7 +42,7 @@
 				<ul>
 					<li class="fragment">Entwickler nicht blockieren</li>
 					<li class="fragment">Am aktuellen Workflow nichts verändern</li>
-					<li class="fragment">Geschwindigkeit - Skalierung?</li>
+					<li class="fragment">Geschwindigkeit & Skalierung?</li>
 				</ul>
 			</section>
 			<section class="section">
@@ -52,6 +57,7 @@
 			<section>
 				<ul>
 					<li class="fragment">Swarm Mode</li>
+					<img class="fragment" height="200px" src="test/docker-swarm%20init.gif" alt="">
 					<li class="fragment">Im Prinzip gleiches Toolset wie wir bereits einsetzen</li>
 					<li class="fragment">Erlaubt die gemeinsame Nutzung von mehreren Docker Hosts (Servern)</li>
 				</ul>
@@ -65,6 +71,14 @@
 			</section>
 			<section>
 				<img src="https://cdn-images-1.medium.com/max/1600/1*dvIZd0ZN-KcjaDDAKTWcLA.png"></img>
+			</section>
+			<section data-transition="fade">
+				<h3>Entwurf</h3>
+				<img height="500px" src="test/stacks.png" alt="">
+			</section>
+			<section data-transition="fade">
+				<h3>Vereinfacht</h3>
+				<img height="500px" src="test/stacks1.png" alt="">
 			</section>
 			<section>
 				<h2>Demo</h2>
@@ -94,7 +108,7 @@
 				<ul>
 					<li class="fragment">Jeder Branch der einem Muster entspricht wird gebaut, kennen wir ja schon</li>
 					<li class="fragment">Beispiel Branchname = feature/123</li>
-					<img src="test/fooo.png" alt="">
+					<img class="fragment" src="test/fooo.png" alt="">
 				</ul>
 			</section>
 			<section>
@@ -137,9 +151,17 @@
 				<ul>
 					<li class="fragment">Workflow mit Bitbucket, PR deployments?</li>
 					<li class="fragment">Entwicklung von einem einheitlichen Konzept</li>
-					<li class="fragment">einfaches Setup für jedes Projekt</li>
-					<li class="fragment">getrennte CI Systeme für Feature/Dev Deployments und Prod</li>
-					<li class="fragment">oder über Prio</li>
+					<li class="fragment">Einfaches Setup für jedes Projekt</li>
+					<li class="fragment">Getrennte CI Systeme für Feature/Dev Deployments und Prod?</li>
+					<li class="fragment">Oder über Prio</li>
+				</ul>
+			</section>
+			<section>
+				<h4>Noch ein paar learnings</h4>
+				<ul>
+					<li class="fragment">Ob Jenkins, Gitlab-CI oder Drone - es war ziemlich ähnlich</li>
+					<li class="fragment">Wenn man viel mit Docker arbeitet, spart einem Linux als Docker-Host viel Zeit</li>
+					<li class="fragment">Once the cache is invalidated, all subsequent Dockerfile commands generate new images and the cache is not used.</li>
 				</ul>
 			</section>
 		</div>
