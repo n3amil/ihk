@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-	<title>Docker Einstieg</title>
+	<title>IHK Abschlussprüfung</title>
 
 	<link rel="stylesheet" href="css/reveal.css">
 	<link rel="stylesheet" href="css/theme/sky.css">
@@ -24,166 +24,296 @@
 </head>
 
 <body>
-	<div class="reveal">
-		<div class="slides">
+<div class="reveal">
+	<div class="slides">
+		<section>
+			<img height="200px" src="https://upload.wikimedia.org/wikipedia/commons/5/58/Logo_TYPO3.svg" alt="">
+			<h3>+</h3>
+			<img height="200px"
+				 src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Flag_of_Europe.svg/1280px-Flag_of_Europe.svg.png" alt="">
+			<img height="200px" src="https://upload.wikimedia.org/wikipedia/commons/f/f1/2ChocolateChipCookies.jpg" alt="">
+		</section>
+		<section>
+			<h3>Entwicklung einer DSGVO konformen Cookie-Erweiterung für das CMS TYPO3 </h3>
+		</section>
+		<section class="section">
+			<h2>Einführung</h2>
+		</section>
+		<section>
+			<h3>Unternehmen</h3>
+			<ul>
+				<li class="fragment">3m5.</li>
+				<li class="fragment">TODO</li>
+			</ul>
+		</section>
+		<section class="section">
 			<section>
-				<img height="200px" src="http://blog.arungupta.me/wp-content/uploads/2015/04/docker-swarm.png" alt="">
-				<h3>+</h3>
-				<img height="200px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Jenkins_logo_with_title.svg/1280px-Jenkins_logo_with_title.svg.png" alt="">
-			</section>
-			<section>
-				<h2>Feature Branch Deployments CI/CD</h2>
-			</section>
-			<section class="section">
-				<h2>Wie bin ich dazu gekommen?</h2>
-			</section>
-			<section>
-				<h3>Testing sollte</h3>
+				<h3>Meine Rolle bei 3m5.</h3>
 				<ul>
-					<li class="fragment">Entwickler nicht blockieren</li>
-					<li class="fragment">Am aktuellen Workflow nichts verändern</li>
-					<li class="fragment">Geschwindigkeit & Skalierung?</li>
-				</ul>
-			</section>
-			<section class="section">
-				<h2 class="fragment">Feature Branch Deployments mit Docker Swarm</h2>
-			</section>
-			<section>
-				<h2 class="fragment">Was ist Docker Swarm</h2>
-				<div class="fragmet">
-					<img height="500px" src="https://cdn-images-1.medium.com/max/1600/0*Hl-1BN46JLiTh8UM.png" alt="">
-				</div>
-			</section>
-			<section>
-				<ul>
-					<li class="fragment">Swarm Mode</li>
-					<img class="fragment" height="200px" src="test/docker-swarm%20init.gif" alt="">
-					<li class="fragment">Im Prinzip gleiches Toolset wie wir bereits einsetzen</li>
-					<li class="fragment">Erlaubt die gemeinsame Nutzung von mehreren Docker Hosts (Servern)</li>
+					<li class="fragment">TYPO3 Entwickler, Backend</li>
+					<li class="fragment">PHP</li>
+					<li class="fragment">HTML</li>
+					<li class="fragment">CSS</li>
+					<li class="fragment">JS</li>
 				</ul>
 			</section>
 			<section>
+				<h3>Weitere Bereiche bei 3m5.</h3>
 				<ul>
-					<li class="fragment">Worker und Manager Nodes</li>
-					<li class="fragment">Die Manager kümmern sich um den Swarm</li>
-					<li class="fragment">Die Worker führen unsere Container aus</li>
+					<li class="fragment">Docker</li>
+					<li class="fragment">CI/CD</li>
+					<li class="fragment">In Zukunft TDD/BDD</li>
 				</ul>
 			</section>
+		</section>
+
+		<section>
+			<h2 class="fragment">Projektvorstellung</h2>
+		</section>
+		<section>
+			<h3>Begründung</h3>
+			<ul>
+				<li class="fragment">hoher Aufwand</li>
+				<li class="fragment">erhöhte Nachfrage mit DSGVO</li>
+			</ul>
+		</section>
+		<section>
+			<h3>Ziel</h3>
+			<ul>
+				<li class="fragment">Aufwand verringern</li>
+				<li class="fragment">Erweiterbarkeit</li>
+			</ul>
+		</section>
+		<section>
+			<h3>Planung</h3>
+			<ul>
+				<li class="fragment">Wasserfallmodell</li>
+			</ul>
+		</section>
+		<section style="font-size: 30px">
+			<table>
+				<tr>
+					<th>Projektphase</th>
+					<th>Geplante Zeit</th>
+				</tr>
+				<tr>
+					<td> Ist-Analyse der aktuell implementierten Lösungen
+					</td>
+					<td> 6 h
+					</td>
+				</tr>
+				<tr>
+					<td> Soll-Analyse für die Implementierung der Erweiterung
+
+					</td>
+					<td> 6 h
+					</td>
+				</tr>
+				<tr>
+					<td> Erhebung und Definition von Anforderungen
+
+					</td>
+					<td> 8 h
+
+					</td>
+				</tr>
+				<tr>
+					<td> Implementierung der Anforderungen
+
+
+					</td>
+					<td> 22 h
+
+
+					</td>
+				</tr>
+				<tr>
+					<td> Projektdokumentation
+
+
+					</td>
+					<td> 8 h
+
+					</td>
+				</tr>
+				<tr>
+					<td> Kundendokumentation
+
+
+					</td>
+					<td> 2 h
+
+
+					</td>
+				</tr>
+				<tr style="font-weight: bold">
+					<td> Gesamt
+
+
+					</td>
+					<td> 60 h
+
+					</td>
+				</tr>
+			</table>
+		</section>
+		<section style="font-size: 25px">
+			<table>
+				<tr>
+					<th>Vorgang</th>
+					<th>Mitarbeiter</th>
+					<th>Anzahl</th>
+					<th>Stundensatz</th>
+					<th>Kosten</th>
+				</tr>
+				<tr>
+					<td> Entwicklungskosten
+					</td>
+					<td> Auszubildender
+					</td>
+					<td> 60,0 h
+					</td>
+					<td> 63,00 €
+					</td>
+					<td> 3780,00 €
+					</td>
+				</tr>
+				<tr>
+					<td> Code-Review
+					</td>
+					<td> Entwickler
+					</td>
+					<td> 2,0 h
+					</td>
+					<td> 63,00 €
+					</td>
+					<td> 126,00 €
+					</td>
+				</tr>
+				<tr>
+					<td> Entwicklerbesprechung
+					</td>
+					<td> Entwickler
+					</td>
+					<td> 6,0 h
+					</td>
+					<td> 63,00 €
+					</td>
+					<td> 378,00 €
+					</td>
+				</tr>
+				<tr>
+					<td> Abnahme
+					</td>
+					<td> Projektleiter
+					</td>
+					<td> 2,0 h
+					</td>
+					<td> 63,00 €
+					</td>
+					<td> 126,00 €
+					</td>
+				</tr>
+				<tr style="font-weight: bold">
+					<td> Gesamt
+					</td>
+					<td>
+					</td>
+					<td> 70,0 h
+					</td>
+					<td> 63,00 €
+					</td>
+					<td> 4410,00 €
+					</td>
+				</tr>
+			</table>
+		</section>
+		<section>
+			<ul>
+				<li class="fragment">Jeder Branch der einem Muster entspricht wird gebaut, kennen wir ja schon</li>
+				<li class="fragment">Beispiel Branchname = feature/123</li>
+				<img class="fragment" src="test/fooo.png" alt="">
+			</ul>
+		</section>
+		<section>
 			<section>
-				<img src="https://cdn-images-1.medium.com/max/1600/1*dvIZd0ZN-KcjaDDAKTWcLA.png"></img>
-			</section>
-			<section data-transition="fade">
-				<h3>Entwurf</h3>
-				<img height="500px" src="test/stacks.png" alt="">
-			</section>
-			<section data-transition="fade">
-				<h3>Vereinfacht</h3>
-				<img height="500px" src="test/stacks1.png" alt="">
-			</section>
-			<section>
-				<h2>Demo</h2>
+				<h3>Vorteile?</h3>
 				<aside class="notes">
-					<ul>
-						<li>Branch erstellen</li>
-						<li>Jenkins zeigen</li>
-						<li>slack zeigen</li>
-						<li>portainer zeigen</li>
-						<li>traefik zeigen</li>
-						<li>auschecken</li>
-						<li>farbe anpassen in /home/neamil/Projekte/docker_swarm_demo_projekt/app/public/typo3conf/ext/demo_sitepackage/Configuration/TypoScript/constants.typoscript</li>
-						<li>commit PUSH</li>s
-						<li>jenkins zeigen</li>
-						<li>slack zeigen</li>
-						<li>portainer zeigen</li>
-						<li>Seite zeigen</li>
-						<li>PR erstellen</li>
-						<li>test fixen</li>
-						<li>neu pushen</li>
-						<li>mergen</li>
-					</ul>
+					<h2>NACH UNTEN</h2>
 				</aside>
-			</section>
 
+			</section>
 			<section>
 				<ul>
-					<li class="fragment">Jeder Branch der einem Muster entspricht wird gebaut, kennen wir ja schon</li>
-					<li class="fragment">Beispiel Branchname = feature/123</li>
-					<img class="fragment" src="test/fooo.png" alt="">
+					<li class="fragment">Wir können alle unsere Tests dort durchführen</li>
+					<li class="fragment">Alle Branches können gleichzeitig laufen</li>
+					<li class="fragment">Lauffähige clones aller System Branches, ohne Setup Aufwand - automatisch</li>
+					<li class="fragment">Neue Möglichkeiten für QA (intern & extern)</li>
+					<li class="fragment">Ärger mit dem lokalen Docker? Änderungen einfach pushen</li>
 				</ul>
 			</section>
 			<section>
-				<section>
-					<h3>Vorteile?</h3>
-					<aside class="notes">
-						<h2>NACH UNTEN</h2>
-					</aside>
-
-				</section>
-				<section>
-					<ul>
-						<li class="fragment">Wir können alle unsere Tests dort durchführen</li>
-						<li class="fragment">Alle Branches können gleichzeitig laufen</li>
-						<li class="fragment">Lauffähige clones aller System Branches, ohne Setup Aufwand - automatisch</li>
-						<li class="fragment">Neue Möglichkeiten für QA (intern & extern)</li>
-						<li class="fragment">Ärger mit dem lokalen Docker? Änderungen einfach pushen</li>
-					</ul>
-				</section>
-				<section>
-					<ul>
-						<li class="fragment">Bei der Code-Review</li>
-						<li class="fragment">Mit welchem Branch wurde ein Fehler eingeführt? Auch für Nichtentwickler vergleichbar</li>
-						<li class="fragment">Entwickler A und B blockieren sich nicht auf Dev</li>
-						<li class="fragment">Weiterer Schritt in Richtung CD</li>
-					</ul>
-				</section>
-			</section>
-			<section>
-				<h3>Probleme?</h3>
 				<ul>
-					<li class="fragment">Kosten</li>
-					<li class="fragment">Große Daten (DB, Bilder)</li>
-					<li class="fragment">Je nach Bedingung wird jeder Commit deployed - skaliert der Jenkins mit?</li>
-					<li class="fragment">Zeitaufwand, Pflege ist notwendig</li>
+					<li class="fragment">Bei der Code-Review</li>
+					<li class="fragment">Mit welchem Branch wurde ein Fehler eingeführt? Auch für Nichtentwickler vergleichbar</li>
+					<li class="fragment">Entwickler A und B blockieren sich nicht auf Dev</li>
+					<li class="fragment">Weiterer Schritt in Richtung CD</li>
 				</ul>
 			</section>
-			<section>
-				<h3>Was brauchen wir noch?</h3>
-				<ul>
-					<li class="fragment">Workflow mit Bitbucket, PR deployments?</li>
-					<li class="fragment">Entwicklung von einem einheitlichen Konzept</li>
-					<li class="fragment">Einfaches Setup für jedes Projekt</li>
-					<li class="fragment">Getrennte CI Systeme für Feature/Dev Deployments und Prod?</li>
-					<li class="fragment">Oder über Prio</li>
-				</ul>
-			</section>
-			<section>
-				<h4>Noch ein paar learnings</h4>
-				<ul>
-					<li class="fragment">Ob Jenkins, Gitlab-CI oder Drone - es war ziemlich ähnlich</li>
-					<li class="fragment">Wenn man viel mit Docker arbeitet, spart einem Linux als Docker-Host viel Zeit</li>
-					<li class="fragment">Once the cache is invalidated, all subsequent Dockerfile commands generate new images and the cache is not used.</li>
-				</ul>
-			</section>
-		</div>
+		</section>
+		<section>
+			<h3>Probleme?</h3>
+			<ul>
+				<li class="fragment">Kosten</li>
+				<li class="fragment">Große Daten (DB, Bilder)</li>
+				<li class="fragment">Je nach Bedingung wird jeder Commit deployed - skaliert der Jenkins mit?</li>
+				<li class="fragment">Zeitaufwand, Pflege ist notwendig</li>
+			</ul>
+		</section>
+		<section>
+			<h3>Was brauchen wir noch?</h3>
+			<ul>
+				<li class="fragment">Workflow mit Bitbucket, PR deployments?</li>
+				<li class="fragment">Entwicklung von einem einheitlichen Konzept</li>
+				<li class="fragment">Einfaches Setup für jedes Projekt</li>
+				<li class="fragment">Getrennte CI Systeme für Feature/Dev Deployments und Prod?</li>
+				<li class="fragment">Oder über Prio</li>
+			</ul>
+		</section>
+		<section>
+			<h4>Noch ein paar learnings</h4>
+			<ul>
+				<li class="fragment">Ob Jenkins, Gitlab-CI oder Drone - es war ziemlich ähnlich</li>
+				<li class="fragment">Wenn man viel mit Docker arbeitet, spart einem Linux als Docker-Host viel Zeit</li>
+				<li class="fragment">Once the cache is invalidated, all subsequent Dockerfile commands generate new images and the cache is
+					not used.
+				</li>
+			</ul>
+		</section>
 	</div>
+</div>
 
-	<script src="lib/js/head.min.js"></script>
-	<script src="js/reveal.js"></script>
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
 
-	<script>
-		// More info about config & dependencies:
-		// - https://github.com/hakimel/reveal.js#configuration
-		// - https://github.com/hakimel/reveal.js#dependencies
-		Reveal.initialize({
-			transition: 'convex',
-			dependencies: [
-				{ src: 'plugin/markdown/marked.js' },
-				{ src: 'plugin/markdown/markdown.js' },
-				{ src: 'plugin/notes/notes.js', async: true },
-				{ src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
-			]
-		});
-	</script>
+<script>
+	// More info about config & dependencies:
+	// - https://github.com/hakimel/reveal.js#configuration
+	// - https://github.com/hakimel/reveal.js#dependencies
+	Reveal.initialize({
+		transition: 'convex',
+		dependencies: [
+			{src: 'plugin/markdown/marked.js'},
+			{src: 'plugin/markdown/markdown.js'},
+			{src: 'plugin/notes/notes.js', async: true},
+			{
+				src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+					hljs.initHighlightingOnLoad();
+				}
+			}
+		]
+	});
+</script>
 </body>
 
 </html>
