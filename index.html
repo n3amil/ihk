@@ -229,66 +229,102 @@
 			</table>
 		</section>
 		<section>
+			<h3>Amortisation</h3>
+			<p>Pro Einsatz spart die Basiserweiterung 4,42 h oder 278,46€ ein</p>
+			<p>Ab dem 16. Projekt macht 3m5. mit der Erweiterung Gewinn.</p>
+		</section>
+		<section>
+			<h3>Weitere Vorteile</h3>
 			<ul>
-				<li class="fragment">Jeder Branch der einem Muster entspricht wird gebaut, kennen wir ja schon</li>
-				<li class="fragment">Beispiel Branchname = feature/123</li>
-				<img class="fragment" src="test/fooo.png" alt="">
+				<li class="fragment">Grundlage bei allen TYPO3 Projekten gleich</li>
+				<li class="fragment">Weiterentwicklung</li>
+				<li class="fragment">neue Features</li>
+			</ul>
+		</section>
+		<section>
+			<h2>Umsetzung</h2>
+		</section>
+		<section>
+			<h3>Architektur</h3>
+			<ul>
+				<li class="fragment">TYPO3 CMS</li>
+				<li class="fragment">PHP</li>
+				<li class="fragment">Extbase (MVC Framework) & Fluid</li>
+			</ul>
+		</section>
+		<section>
+			<h3>System & Architektur</h3>
+			<ul>
+				<li class="fragment">TYPO3 CMS</li>
+				<li class="fragment">PHP</li>
+				<li class="fragment">Extbase (MVC Framework) & Fluid</li>
 			</ul>
 		</section>
 		<section>
 			<section>
-				<h3>Vorteile?</h3>
-				<aside class="notes">
-					<h2>NACH UNTEN</h2>
-				</aside>
+				<h3>Implementierung</h3>
+				<ul>
+					<li class="fragment">MVC -> VC</li>
+					<li class="fragment">Konfiguration als YAML</li>
+				</ul>
+			</section>
+			<section>
+				<h3>Template des Banners</h3>
+				<pre>
+					<code data-trim >
+<div id="cookiebanner" class="cookiebanner" data-scripts="{scripts}">
+    <span class="cookiebanner__message">
+        <f:translate key="LLL:EXT:3m5_cookies/Resources/Private/Language/locallang.xlf:banner.message"/>
+        <f:if condition="{c:config(key: 'privacyPageId')}!=''">
+            <v:page.link class="cookiebanner__link" pageUid="{c:config(key: 'privacyPageId')}">
+                <f:translate key="LLL:EXT:3m5_cookies/Resources/Private/Language/locallang.xlf:banner.message.more"/>
+            </v:page.link>
+        </f:if>
+    </span>
 
+    <div class="cookiebanner__compliance">
+        <a role="button" tabindex="0" class="cookiebanner__btn cookiebanner__btn--deny" data-behavior="cookiebanner" data-value="decline">
+            <f:translate key="LLL:EXT:3m5_cookies/Resources/Private/Language/locallang.xlf:banner.button.decline"/>
+        </a>
+        <a role="button" tabindex="0" class="cookiebanner__btn" data-behavior="cookiebanner" data-value="allow">
+            <f:translate key="LLL:EXT:3m5_cookies/Resources/Private/Language/locallang.xlf:banner.button.allow"/>
+        </a>
+    </div>
+</div>
+				</code>
+				</pre>
 			</section>
 			<section>
-				<ul>
-					<li class="fragment">Wir können alle unsere Tests dort durchführen</li>
-					<li class="fragment">Alle Branches können gleichzeitig laufen</li>
-					<li class="fragment">Lauffähige clones aller System Branches, ohne Setup Aufwand - automatisch</li>
-					<li class="fragment">Neue Möglichkeiten für QA (intern & extern)</li>
-					<li class="fragment">Ärger mit dem lokalen Docker? Änderungen einfach pushen</li>
-				</ul>
+				<h3>Rendering des Standalone Views</h3>
+				<pre>
+					<code data-trim >
+lib.cookie_banner = TEXT
+lib.cookie_banner {
+    value = Banner
+    stdWrap.postUserFuncInt = DMF\DmfCookies\UserFunction\BannerRenderer->render
+    stdWrap.postUserFuncInt {
+        view < lib.cookie_banner.view
+    }
+}
+				</code>
+				</pre>
 			</section>
 			<section>
-				<ul>
-					<li class="fragment">Bei der Code-Review</li>
-					<li class="fragment">Mit welchem Branch wurde ein Fehler eingeführt? Auch für Nichtentwickler vergleichbar</li>
-					<li class="fragment">Entwickler A und B blockieren sich nicht auf Dev</li>
-					<li class="fragment">Weiterer Schritt in Richtung CD</li>
-				</ul>
+				<h3>Konfiguration der Analytics Tools</h3>
+				<pre>
+					<code data-trim >
+domain =
+matomo.url =
+matomo.siteId =
+googleAnalytics.id =
+googleTagmanager.id =
+				</code>
+				</pre>
 			</section>
-		</section>
-		<section>
-			<h3>Probleme?</h3>
-			<ul>
-				<li class="fragment">Kosten</li>
-				<li class="fragment">Große Daten (DB, Bilder)</li>
-				<li class="fragment">Je nach Bedingung wird jeder Commit deployed - skaliert der Jenkins mit?</li>
-				<li class="fragment">Zeitaufwand, Pflege ist notwendig</li>
-			</ul>
-		</section>
-		<section>
-			<h3>Was brauchen wir noch?</h3>
-			<ul>
-				<li class="fragment">Workflow mit Bitbucket, PR deployments?</li>
-				<li class="fragment">Entwicklung von einem einheitlichen Konzept</li>
-				<li class="fragment">Einfaches Setup für jedes Projekt</li>
-				<li class="fragment">Getrennte CI Systeme für Feature/Dev Deployments und Prod?</li>
-				<li class="fragment">Oder über Prio</li>
-			</ul>
-		</section>
-		<section>
-			<h4>Noch ein paar learnings</h4>
-			<ul>
-				<li class="fragment">Ob Jenkins, Gitlab-CI oder Drone - es war ziemlich ähnlich</li>
-				<li class="fragment">Wenn man viel mit Docker arbeitet, spart einem Linux als Docker-Host viel Zeit</li>
-				<li class="fragment">Once the cache is invalidated, all subsequent Dockerfile commands generate new images and the cache is
-					not used.
-				</li>
-			</ul>
+			<section>
+				<h3>Backend</h3>
+				<img src="./images/backend.jpg" alt="">
+			</section>
 		</section>
 	</div>
 </div>
