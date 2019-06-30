@@ -76,6 +76,30 @@
 				</ul>
 			</section>
 			<section>
+				<h3>die DSGVO</h3>
+				<ul>
+					<li>
+						Hier zu finden https://eur-lex.europa.eu/eli/reg/2016/679
+					</li>
+					<li>
+						Art. 4 Abschnitt 1 personenbezogene Daten
+					</li>
+					<li>
+						§ 15 Abs. 3 Telemedien-Gesetz
+					</li>
+					<li>
+						berechtigtes Interesse und Einwilligung
+						[Art. 6 Abs.1]
+					</li>
+					<li>
+						ePrivacy-Verordnung
+					</li>
+				</ul>
+			</section>
+			<section>
+				<img src="./images/VCLGrGu.png" alt="">
+			</section>
+			<section>
 				<h3>Ziel</h3>
 				<ul>
 					<li class="fragment">Aufwand verringern</li>
@@ -296,13 +320,74 @@
 lib.cookie_banner = TEXT
 lib.cookie_banner {
     value = Banner
-    stdWrap.postUserFuncInt = DMF\DmfCookies\UserFunction\BannerRenderer->render
+    stdWrap.postUserFuncInt = ...\BannerRenderer->render
     stdWrap.postUserFuncInt {
         view < lib.cookie_banner.view
     }
 }
 				</code>
 				</pre>
+				</section>
+				<section>
+					<pre style="font-size: 20px">
+						<code data-trim>
+public function render(string $content, array $conf)
+{
+// Prevent rendering from cookie banner if cookie is already set
+if ($_COOKIE[self::cookieKey] !== null) {
+   ...
+}
+...
+// If we have the banner already cached use it and skip fluid rendering
+if ($cache->has($identifier)) {
+    return $cache->get($identifier);
+}
+$standaloneView = GeneralUtility::makeInstance(StandaloneView::class);
+$standaloneView->setFormat('html');
+}</code>
+					</pre>
+				</section>
+				<section>
+					<pre style="font-size: 20px">
+							<code data-trim>
+	$partial = $conf['view.']['partial'] ?? 'Banner';
+	foreach (self::loaderClasses as $loaderClass) {
+		...
+	}
+	$content = $standaloneView->renderPartial(
+		...
+			'scripts' => base64_encode(json_encode($scripts)),
+		]
+	);
+	$cache->set($identifier, "...$content...');
+	return $content;
+	}</code>
+						</pre>
+				</section>
+				<section>
+					<h3>Implementierung abgeschlossen</h3>
+					<ul>
+						<li>
+							Bereitstellung als Composer-Paket
+						</li>
+						<li>
+							<pre>
+								<code  data-trim >
+										{
+											"repositories": [
+											  {
+												"url": "git/dmfte/cookiebanner.git",
+												"type": "vcs"
+											  }
+											],
+											"require": {
+											  "dmf/dmf-cookies": "dev-trunk",
+											}
+										  }
+								</code>
+							</pre>
+						</li>
+					</ul>
 				</section>
 				<section>
 					<h3>Konfiguration der Analytics Tools</h3>
@@ -367,6 +452,7 @@ googleTagmanager.id =
 					<li>https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Flag_of_Europe.svg/1280px-Flag_of_Europe.svg.png
 					</li>
 					<li>https://upload.wikimedia.org/wikipedia/commons/f/f1/2ChocolateChipCookies.jpg</li>
+					<li>https://i.imgur.com/VCLGrGu.png</li>
 				</ul>
 			</section>
 		</div>
